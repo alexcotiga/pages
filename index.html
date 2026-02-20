@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My GitHub Pages Site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f4ef;
+      --surface: #ffffff;
+      --ink: #1a1814;
+      --ink-muted: #6b6760;
+      --accent: #c0570a;
+      --accent-light: #f0e6dc;
+      --border: #e2ddd6;
+      --code-bg: #1e1c18;
+      --code-fg: #e8e2d9;
+    }
+
+    html { font-size: 17px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+      font-weight: 300;
+      min-height: 100vh;
+    }
+
+    /* Layout */
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    header h1 {
+      font-family: 'Lora', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 3rem;
+      animation: fadeUp 0.6s ease both;
+      animation-delay: 0.1s;
+    }
+
+    h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 1.5rem 0 0.6rem;
+    }
+
+    p { margin-bottom: 1rem; color: var(--ink); }
+    p:last-child { margin-bottom: 0; }
+
+    /* Inline formatting */
+    strong { font-weight: 500; color: var(--ink); }
+    em { font-family: 'Lora', serif; font-style: italic; }
+    s { color: var(--ink-muted); }
+
+    code {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82em;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.15em 0.4em;
+      border-radius: 3px;
+    }
+
+    /* Lists */
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    li { margin-bottom: 0.3rem; }
+    li::marker { color: var(--accent); }
+
+    /* Code blocks */
+    pre {
+      background: var(--code-bg);
+      color: var(--code-fg);
+      border-radius: 8px;
+      padding: 1.4rem 1.6rem;
+      overflow-x: auto;
+      margin: 1.2rem 0;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+
+    pre code {
+      background: none;
+      color: inherit;
+      padding: 0;
+      font-size: inherit;
+    }
+
+    /* Blockquotes */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 1.2rem 0;
+      padding: 0.8rem 1.2rem;
+      background: var(--accent-light);
+      border-radius: 0 6px 6px 0;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--ink-muted);
+    }
+
+    blockquote blockquote {
+      margin: 0.8rem 0 0;
+      background: transparent;
+      border-left-color: var(--border);
+    }
+
+    /* Tables */
+    .table-wrap { overflow-x: auto; margin: 1.2rem 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    thead tr {
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    th {
+      padding: 0.7rem 1rem;
+      text-align: left;
+      font-weight: 500;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody tr:hover { background: var(--accent-light); }
+
+    /* Images */
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      display: block;
+      margin: 1.2rem 0;
+    }
+
+    /* Links */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    a:hover { border-bottom-color: var(--accent); }
+
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2rem 0 3rem;
+      border-top: 1px solid var(--border);
+      color: var(--ink-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Footnote */
+    .footnote {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      border-top: 1px solid var(--border);
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.7rem; }
+      pre { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <h1>My GitHub Pages Site</h1>
+      <p>A sample page demonstrating various formatting options rendered through GitHub Pages.</p>
+    </header>
+
+    <section>
+      <h2>About This Project</h2>
+      <p>This project is a <strong>work in progress</strong> and serves as a playground for experimenting with Jekyll and GitHub Pages. It showcases how <em>italic</em>, <strong>bold</strong>, and <code>inline code</code> all render in the browser.</p>
+      <p>You can also combine them: <strong><em>bold and italic</em></strong> text, or even <s>strikethrough</s> for things that are no longer relevant.</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Features</h2>
+      <ul>
+        <li>Fast and lightweight static site</li>
+        <li>Powered by <strong>Jekyll</strong> and hosted on <strong>GitHub Pages</strong></li>
+        <li>Supports Markdown out of the box</li>
+        <li>Easy to customise with themes</li>
+      </ul>
+
+      <h3>What's Coming</h3>
+      <ol>
+        <li>A proper landing page</li>
+        <li>A blog section with posts</li>
+        <li>A contact form</li>
+        <li>Dark mode support</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Code Examples</h2>
+      <p>Here's a snippet of a simple Python function:</p>
+      <pre><code>def greet(name):
+    """Return a greeting string."""
+    return f"Hello, {name}! Welcome to my site."
+
+print(greet("World"))</code></pre>
+
+      <p>And a quick bit of HTML:</p>
+      <pre><code>&lt;section&gt;
+  &lt;h2&gt;Hello, world!&lt;/h2&gt;
+  &lt;p&gt;This is rendered by Jekyll.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Blockquotes</h2>
+      <blockquote>
+        "The best way to get started is to quit talking and begin doing."<br>
+        — Walt Disney
+      </blockquote>
+      <p>Nested quotes also work:</p>
+      <blockquote>
+        Outer quote.
+        <blockquote>Inner quote, for extra emphasis.</blockquote>
+      </blockquote>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Tables</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Status</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Homepage</td>
+              <td>✅ Complete</td>
+              <td>Live and rendering</td>
+            </tr>
+            <tr>
+              <td>Blog</td>
+              <td>🚧 In Progress</td>
+              <td>Posts being drafted</td>
+            </tr>
+            <tr>
+              <td>Dark Mode</td>
+              <td>❌ Not Started</td>
+              <td>Planned for v2</td>
+            </tr>
+            <tr>
+              <td>Contact Page</td>
+              <td>✅ Complete</td>
+              <td>Linked in the header</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Images</h2>
+      <img src="https://pages.github.com/images/logo.svg" alt="GitHub Pages Logo">
+      <p><em>Replace the above URL with a path to your own image, e.g. <code>assets/images/photo.jpg</code></em></p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a></li>
+        <li><a href="https://jekyllrb.com/docs/">Jekyll Documentation</a></li>
+        <li><a href="https://www.markdownguide.org/">Markdown Guide</a></li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Horizontal Rules &amp; Misc</h2>
+      <p>You can separate sections with a horizontal rule like the ones in this document (<code>---</code>).</p>
+      <p>You can also write footnotes<sup>1</sup> and reference-style links if your renderer supports them.</p>
+      <div class="footnote">
+        <sup>1</sup> This is a footnote. GitHub Pages supports these in most themes.
+      </div>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Have questions or feedback? Reach out via <a href="../../issues">GitHub Issues</a> or email <strong>123pages@acotiga.net</strong>.</p>
+    </section>
+
+    <footer>
+      <em>Last updated: 2026 &mdash; Built with Jekyll &amp; GitHub Pages.</em>
+    </footer>
+
+  </div>
+</body>
+</html>
