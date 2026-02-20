@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # My GitHub Pages Site
 
 Welcome to my project! This is a sample page demonstrating various markdown formatting options rendered through GitHub Pages.
